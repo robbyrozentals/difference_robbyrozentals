@@ -6,6 +6,8 @@ CSG cube = new Cube(	size,// X dimention
 //create a sphere
 CSG sphere = new Sphere(size/20*12.5).toCSG()
 // perform a union
-CSG cubePlusSphere = cube.difference(sphere);
 
+CSG simpleSyntax =new Cylinder(20,40).toCSG() // a one line Cylinder
+sphere=sphere.difference(simpleSyntax)
+CSG cubePlusSphere = cube.difference(sphere);
 return [cubePlusSphere , cube.movex(size*1.5), sphere.movey(size*1.5)]
